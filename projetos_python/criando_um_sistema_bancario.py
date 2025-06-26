@@ -1,7 +1,9 @@
+# Criando a função que separa e distingue os cabeçalho dos Menus
 def cabecalho(nome, simbolo):
-    nome = nome.center(30, f"{simbolo}")
+    nome = nome.center(50, f"{simbolo}")
     return nome
 
+# Criando o Menu inicial
 menu_principal= f'''
 {cabecalho(" MENU PRINCIPAL ", "=")}
 
@@ -14,6 +16,7 @@ menu_principal= f'''
 
 Digite uma das opcoes=> '''
 
+#  Criando variáveis
 saldo = 0
 extrato = ""
 valor_limite = 500
@@ -21,10 +24,14 @@ numero_saques = 0
 LIMITE_DE_SAQUES = 3
 movimentacao = ""
 
+# Criando o laço de repetição
 while True:
     
+    # Criando uma entrada de dados para navegação no Menu
     opcao = input(menu_principal)
 
+    # Criando uma estrutura condicional para efetuar ações de
+    # acordo com a opção do operador
     if opcao == "1":
         print(cabecalho(" DEPÓSITO ", "+"))
         print("")
@@ -52,7 +59,7 @@ while True:
         if excedeu_saldo:
             print("Operação falhou! Você não tem saldo suficiente.")
             print("")
-            input("Digite 1 para voltar ao Menu Principal: ")
+            input("Digite qualquer numero para voltar ao Menu  Principal: ")
             continue
         
         elif excedeu_saques:
